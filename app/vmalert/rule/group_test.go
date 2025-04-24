@@ -180,7 +180,8 @@ func TestUpdateWith(t *testing.T) {
 		}})
 
 	// empty rule
-	f(config.Group{Rules: []config.Rule{{Alert: "foo"}, {Record: "bar"}}}, config.Group{})
+	f(config.Group{
+		Rules: []config.Rule{{Alert: "foo"}, {Record: "bar"}}}, config.Group{})
 
 	// multiple rules
 	f(config.Group{
@@ -195,7 +196,9 @@ func TestUpdateWith(t *testing.T) {
 		}})
 
 	// replace rule
-	f(config.Group{Rules: []config.Rule{{Alert: "foo1"}}}, config.Group{Rules: []config.Rule{{Alert: "foo2"}}})
+	f(config.Group{
+		Rules: []config.Rule{{Alert: "foo1"}}}, config.Group{
+		Rules: []config.Rule{{Alert: "foo2"}}})
 
 	// replace multiple rules
 	f(config.Group{
